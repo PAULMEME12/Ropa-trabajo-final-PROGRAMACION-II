@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <div class="header text-center mb-5">
+    <img
+      src="{% static 'img/Catlogo.png' %}"
+      alt="Logotipo"
+      class="img-fluid mb-4 logo-small"
+      style="width: 40%"
+    />
+    <h1 class="display-4">Bienvenido a la Aplicación de Catálogo</h1>
+  </div>
+  <div class="text-center my-4">
+    <a href="{% url 'lista_clientes' %}" class="btn btn-primary btn-lg mx-2">
+      <i class="fas fa-users"></i> Clientes
+    </a>
+    <a href="{% url 'lista_productos' %}" class="btn btn-success btn-lg mx-2">
+      <i class="fas fa-box"></i> Productos
+    </a>
+    <a href="{% url 'lista_compras' %}" class="btn btn-warning btn-lg mx-2">
+      <i class="fas fa-shopping-cart"></i> Compras
+    </a>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+  src="https://kit.fontawesome.com/a076d05399.js"
+  crossorigin="anonymous"
+></script>
+{% endblock %} {% block extra_css %}
+<style>
+  .logo-small {
+    max-width: 200px !important; /* Ajusta este valor según tus necesidades */
+    height: auto;
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!-- form_cliente.html -->
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1>{% if cliente %}Editar Cliente{% else %}Nuevo Cliente{% endif %}</h1>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="btn btn-success">
+      {% if cliente %}Actualizar{% else %}Guardar{% endif %}
+    </button>
+  </form>
+</div>
+{% endblock %} {% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
